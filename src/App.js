@@ -6,14 +6,16 @@ class App extends Component {
 
   //no props being used here, so we can use the shorthand declaration of state
   state = {
-    timerIDs: []
+    timerIDs: [],
+    count : 0
   }
 
 
   //Your code here:
-
-
-
+  
+  componentWillMount() {
+    
+  }
 
 
 
@@ -48,6 +50,10 @@ class App extends Component {
       timerIDs: [...prevState.timerIDs, Math.floor(Math.random()*1000)]
     }))
   }
+  componentDidMount() {
+    this.handleAddTimer();
+  }
+
 
   // removeTimer updates state, removing any timer that matches the provided author
   removeTimer = id => {
